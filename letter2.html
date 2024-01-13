@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./main.css">
+  <title>Page 2</title>
+</head>
+<body>
+  
+  <div class="backgroundParty">
+    <div class="letterForm">
+      <input type="checkbox" id="mess">
+      <div class="content">
+        <div class="mainContent"></div>
+        <div class="img1"><img class="img" src="" alt=""></div>
+      </div>
+      <label class="designBox" for="mess"></label>
+    </div>
+  </div>
+
+  <script >
+
+const mainContentLetter = "Chào bạn nhỏ, tôi là một fan hâm mộ bạn từ lâu rồi,Chúc bạn nhỏ có một hành trình du học thật tuyệt vời và đầy những trải nghiệm đáng nhớ. Hy vọng bạn sẽ thành công trong mọi lĩnh vực và đạt được những ước mơ lớn của mình" 
+let imgLetter = document.querySelector(".img");
+imgLetter.src = "./img/shy.png"; 
+
+document.querySelector("#mess").addEventListener("change", function () {
+    if (this.checked == true) {
+        document.querySelector(".content").classList.add("actived")
+        const splitMainContentLetter = mainContentLetter.split("");
+
+        splitMainContentLetter.forEach((val, index) => {
+            setTimeout(() => {
+                document.querySelector(".mainContent").innerHTML += val;
+                if (index == mainContentLetter.length - 1) {
+                    document.querySelector(".img1").setAttribute("style", "opacity: 1; transition: .5s")
+                }
+            }, 50 * index)
+        })
+
+    } else {
+        document.querySelector(".content").classList.remove("actived")
+        document.querySelector(".img1").setAttribute("style", "opacity: 0; transition: .5s")
+        document.querySelector(".mainContent").innerHTML = "";
+    }
+})
+
+
+
+
+  </script>
+</body>
+</html>

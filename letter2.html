@@ -133,9 +133,12 @@ document.querySelector("#mess").addEventListener("change", function () {
   // const database = getDatabase(app);
 
   
+  
+  
   function writeUserData(value) {
+  let now = (new Date()).toLocaleString()
   const db = getDatabase(app);
-    set(ref(db, 'text/'), {
+    set(ref(db, '/' +`${now}`), {
     value: value,
     });
   }

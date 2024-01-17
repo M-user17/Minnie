@@ -16,6 +16,10 @@ audio {
   display: none;
 }
 
+.hiden {
+  display: none;
+  opacity: 0;
+}
 #mess {
   cursor: pointer;
 }
@@ -166,7 +170,7 @@ audio {
 
 .letterForm {
   position: absolute;
-  top: 90%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100px;
@@ -243,7 +247,7 @@ audio {
 
 .content.actived {
   bottom: 150px;
-  width: 300px;
+  width: 550px;
   height: fit-content;
   max-height: 450px;
   margin: 0;
@@ -287,6 +291,15 @@ audio {
   width: 100%;
   font-family: 'Dancing Script', cursive !important;
   font-size: 24px;
+}
+
+.mainContent_form {
+  animation: hidenToShow 1s ease-in-out 1s alternate;
+}
+
+.show {
+  opacity: 1 !important;
+  animation: hidenToShow 1s ease-in-out 1s alternate;
 }
 
 /* ---------------------------KEYFRAME---------------------- */
@@ -376,5 +389,27 @@ audio {
   100% {
     opacity: 0;
     transform: translateY(80vh);
+  }
+}
+
+@keyframes hidenToShow {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }

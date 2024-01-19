@@ -416,11 +416,6 @@ audio {
   }
 }
 
-.swal-icon--custom img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-}
 .swal-overlay--show-modal .swal-modal {
   border-radius: 20px;
 }

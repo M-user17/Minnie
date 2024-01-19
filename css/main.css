@@ -118,15 +118,15 @@ audio {
   border-radius: 50%;
   opacity: 0;
   transition: 0.5s;
+  cursor: default;
 }
 
 .recieve:hover {
-  cursor: grab;
   box-shadow: 4px 4px 4px gray;
 }
 
-.recieve:active {
-  cursor: grabbing;
+.recieve_Show:active {
+  cursor: grabbing !important;
 }
 
 .recieve > i {

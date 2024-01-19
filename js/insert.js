@@ -6,6 +6,25 @@ let emailContainer = document.getElementById('emailContainer')
 let favoriteContainer = document.getElementById('favoritefood')
 let selectnamex = document.getElementById('checkSelect')
 let errorForm = document.getElementById('errorForm')
+
+usernameContainer.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    checkUsername()
+  }
+})
+
+passwordContainer.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    checkBirthday()
+  }
+})
+
+emailContainer.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    checkEmail()
+  }
+})
+
 function checkUsername() {
   let username = document.querySelector('.usernameInput').value
   if (username.trim() === 'A') {
@@ -61,17 +80,19 @@ function checkFavorite() {
       selectnamex.classList.remove('hiden')
       setImageWhite()
     } else {
-      alert('Sai hoặc thiếu thông tin rùi')
+      swal('Oops', 'Sai hoặc thiếu thông tin rùi', 'error')
     }
   } else {
-    alert('Bạn nhỏ quên chưa chọn rồi :((')
+    swal('Oops', 'Bạn nhỏ quên chưa chọn rồi :((', 'error')
   }
 }
 
 function CheckEx() {
   let namex1 = document.getElementById('namex').value
   if (namex1.trim() === '') {
-    alert('Bạn nhỏ cứ nói tên nó ra để tui xử nó')
+    swal({
+      title: 'Bạn nhỏ cứ nói tên nó ra để tui xử nó'
+    })
   } else {
     selectnamex.classList.add('hiden')
     window.location.href = 'button.html'

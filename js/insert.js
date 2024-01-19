@@ -33,7 +33,7 @@ nameX.addEventListener('keyup', function (event) {
 
 function checkUsername() {
   let username = document.querySelector('.usernameInput').value
-  if (username.trim() === 'A') {
+  if (username.trim() === 'Nguyễn Thị Nguyệt MinhMinh') {
     passwordContainer.classList.remove('hiden')
     usernameContainer.disabled = true
     usernameContainer.classList.add('hiden')
@@ -44,7 +44,7 @@ function checkUsername() {
 }
 function checkBirthday() {
   let password = document.getElementById('birthday').value
-  if (password.trim() === 'B') {
+  if (password.trim() === '25/09/2003') {
     setImageTim()
 
     emailContainer.classList.remove('hiden')
@@ -56,7 +56,7 @@ function checkBirthday() {
 }
 function checkEmail() {
   let email = document.getElementById('email').value
-  if (email.trim() === 'C') {
+  if (email.trim() === '0375036130') {
     favoriteContainer.classList.remove('hiden')
     emailContainer.disabled = true
     emailContainer.classList.add('hiden')
@@ -87,7 +87,7 @@ function checkFavorite() {
       setImageWhite()
     } else {
       swal({
-        title: 'Sai hoặc thiếu thông tin rùi!',
+        title: 'Sai hoặc thiếu thông tin rùiii!',
         icon: imageSourcesEr[getRandomIndex(imageSourcesEr)]
       })
     }

@@ -27,17 +27,7 @@ body {
   position: relative;
 }
 .hiden {
-  display: none !important;
-}
-
-.fe {
-  position: absolute;
-  top: -500vh;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rg33px;
+  display: 33px;
   font-weight: bold;
   margin-bottom: 15px;
 }

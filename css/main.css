@@ -17,7 +17,7 @@ audio {
 }
 
 .hiden {
-  display: none;
+  display: none !important;
   opacity: 0;
 }
 #mess {
@@ -292,14 +292,58 @@ audio {
   font-family: 'Dancing Script', cursive !important;
   font-size: 24px;
 }
-
-.mainContent_form {
-  animation: hidenToShow 1s ease-in-out 1s alternate;
+.mainContent_text {
+  margin-bottom: 20px;
 }
 
-.show {
-  opacity: 1 !important;
-  animation: hidenToShow 1s ease-in-out 1s alternate;
+.mainContent_button {
+  position: relative;
+}
+
+.mainContent_button {
+  margin-top: 20px;
+  left: 50%;
+  height: fit-content;
+  width: fit-content;
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s;
+  cursor: grab;
+}
+.mainContent_send_form {
+  width: 100%;
+  height: 100%;
+}
+
+.mainContent_textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+}
+.mainContent_send_header {
+  margin-bottom: 10px;
+}
+
+.mainContent_button:hover {
+  box-shadow: 4px 4px 4px gray;
+}
+
+.mainContent_button:active {
+  cursor: grabbing !important;
+}
+
+.mainContent_button > i {
+  font-size: 30px;
+  color: rgb(250, 147, 164);
+}
+.mainContent_send {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 2s;
 }
 
 /* ---------------------------KEYFRAME---------------------- */
@@ -392,24 +436,15 @@ audio {
   }
 }
 
-@keyframes hidenToShow {
-  0% {
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-
-  20% {
-    opacity: 0.2;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  100% {
+  to {
     opacity: 1;
   }
 }

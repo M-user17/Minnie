@@ -12,7 +12,7 @@
   
   <div class="backgroundParty">
     <audio class="song" id="audio" controls loop>
-      <source src="./img/pan.mp3"></source>
+      <source src="./audio/pan.mp3"></source>
     </audio>
 
     <div class="letterForm">
@@ -21,12 +21,15 @@
         <div class="mainContent">
 
           <p class="mainContent_text"></p>
-
-          <form class="mainContent_form hiden">
-            <label></label>
-            <textarea class="mainContent_textarea"></textarea>
-            <button type="button" class="mainContent_button recieve"><i class="fa-solid fa-paper-plane"></i></button>
-          </form>
+          <div class="mainContent_send hiden">
+            <p class="mainContent_send_header"></p>
+            <form class="mainContent_send_form">
+              <label></label>
+              <textarea class="mainContent_textarea"></textarea>
+              <button type="button" class="mainContent_button recieve"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+          
 
         </div>
         <div class="img1"><img class="img" src="" alt=""></div>
@@ -34,9 +37,11 @@
       <label class="designBox" id="play" for="mess"></label>
     </div>
   </div>
+  <script src="./js/sweetalert.min.js"></script>
 <script >
 let mainContent_text = document.querySelector(".mainContent_text");
-let mainContent_form = document.querySelector(".mainContent_form");
+let mainContent_send = document.querySelector(".mainContent_send");
+let mainContent_send_header = document.querySelector(".mainContent_send_header");
 let recieve = document.querySelector(".recieve");
 const mainContentLetter = "Chào bạn nhỏ, tôi là một fan hâm mộ bạn từ lâu rồi,Chúc bạn nhỏ có một hành trình du học thật tuyệt vời và đầy những trải nghiệm đáng nhớ. Hy vọng bạn sẽ thành công trong mọi lĩnh vực và đạt được những ước mơ lớn của mình" 
 let imgLetter = document.querySelector(".img");
@@ -44,7 +49,7 @@ imgLetter.src = "./img/end.png";
 var timeouts = [];
 
 document.querySelector("#mess").addEventListener("change", function () {
-  mainContent_form.classList.add("hiden")
+  mainContent_send.classList.add("hiden")
   recieve.style.opacity = 0;
   var audio = document.getElementById('audio');
   mainContent_text.innerHTML = "";
@@ -68,8 +73,9 @@ audio.play()
               mainContent_text.innerHTML += splitMainContentLetter[i];
               if (i == splitMainContentLetter.length - 1) {
                   setTimeout(()=>{
-                    mainContent_form.classList.remove("hiden")
                     recieve.style.opacity = 1;
+                    mainContent_send.classList.remove("hiden")
+                    mainContent_send_header.innerHTML = "Bạn có gì muốn nói với tôi không?"
                 },3000)
                 document.querySelector(".img1").setAttribute("style", "opacity: 1; transition: .5s");
               }
@@ -87,7 +93,8 @@ audio.play()
         document.querySelector(".content").classList.remove("actived")
         document.querySelector(".img1").setAttribute("style", "opacity: 0; transition: .5s")
         mainContent_text.innerHTML = "";
-        mainContent_form.classList.add("hiden")
+        mainContent_send_header.innerHTML = ""
+        mainContent_send.classList.add("hiden")
         recieve.style.opacity = 0;
     }
 })
@@ -137,6 +144,12 @@ audio.play()
     let text = document.querySelector(".mainContent_textarea").value;
     if(text != ""){
       writeUserData(text)
+      swal({
+        title: "Thank You!",
+        text: "Cảm ơn bạn vì lời nhắn gửi!",
+        icon: "./img/byebye.png",
+      });
+      document.querySelector(".mainContent_textarea").value = "";
     }
   })
 

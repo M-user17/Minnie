@@ -80,10 +80,16 @@ function checkFavorite() {
       selectnamex.classList.remove('hiden')
       setImageWhite()
     } else {
-      swal('Oops', 'Sai hoặc thiếu thông tin rùi', 'error')
+      swal({
+        title: 'Sai hoặc thiếu thông tin rùi!',
+        icon: imageSourcesEr[getRandomIndex(imageSourcesEr)]
+      })
     }
   } else {
-    swal('Oops', 'Bạn nhỏ quên chưa chọn rồi :((', 'error')
+    swal({
+      title: 'Bạn nhỏ quên chưa chọn rồi :((',
+      icon: imageSourcesEr[getRandomIndex(imageSourcesEr)]
+    })
   }
 }
 

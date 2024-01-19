@@ -121,8 +121,8 @@ button {
 }
 
 #error-message {
-  color: rgb(53, 240, 231);
-  font-size: 33px;
+  color: rgb(255, 57, 57);
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 15px;
 }

@@ -6,6 +6,7 @@ let emailContainer = document.getElementById('emailContainer')
 let favoriteContainer = document.getElementById('favoritefood')
 let selectnamex = document.getElementById('checkSelect')
 let errorForm = document.getElementById('errorForm')
+let nameX = document.getElementById('namex')
 
 usernameContainer.addEventListener('keyup', function (event) {
   if (event.key === 'Enter') {
@@ -22,6 +23,11 @@ passwordContainer.addEventListener('keyup', function (event) {
 emailContainer.addEventListener('keyup', function (event) {
   if (event.key === 'Enter') {
     checkEmail()
+  }
+})
+nameX.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    CheckEx()
   }
 })
 

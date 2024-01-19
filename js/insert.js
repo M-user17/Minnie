@@ -33,7 +33,7 @@ nameX.addEventListener('keyup', function (event) {
 
 function checkUsername() {
   let username = document.querySelector('.usernameInput').value
-  if (username.trim() === 'Nguyễn Thị Nguyệt MinhMinh') {
+  if (username.trim() === 'Nguyễn Thị Nguyệt Minh') {
     passwordContainer.classList.remove('hiden')
     usernameContainer.disabled = true
     usernameContainer.classList.add('hiden')

@@ -5,15 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href=" ./css/main.css">
-  <title>Page 2</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <title>For Minne</title>
 </head>
 <body>
   
   <div class="backgroundParty">
-    <audio class="song" controls loop>
-      <source src="assets/hbd.mp3"></source>
-      Your browser isn't invited for super fun audio time.
+    <audio class="song" id="audio" controls loop>
+      <source src="./img/pan.mp3"></source>
     </audio>
 
     <div class="letterForm">
@@ -24,9 +23,9 @@
           <p class="mainContent_text"></p>
 
           <form class="mainContent_form hiden">
-            <label>abc</label>
+            <label></label>
             <textarea class="mainContent_textarea"></textarea>
-            <button type="button" class="mainContent_button recieve"><i class="fa-solid  fa-paw"></i></button>
+            <button type="button" class="mainContent_button recieve"><i class="fa-solid fa-paper-plane"></i></button>
           </form>
 
         </div>
@@ -35,28 +34,19 @@
       <label class="designBox" id="play" for="mess"></label>
     </div>
   </div>
-
-  <script src="assets/jquery.min.js"></script>
-  <script src="assets/effect.js"></script>
-
-
-
 <script >
-
-
-
 let mainContent_text = document.querySelector(".mainContent_text");
 let mainContent_form = document.querySelector(".mainContent_form");
 let recieve = document.querySelector(".recieve");
 const mainContentLetter = "Chào bạn nhỏ, tôi là một fan hâm mộ bạn từ lâu rồi,Chúc bạn nhỏ có một hành trình du học thật tuyệt vời và đầy những trải nghiệm đáng nhớ. Hy vọng bạn sẽ thành công trong mọi lĩnh vực và đạt được những ước mơ lớn của mình" 
 let imgLetter = document.querySelector(".img");
-imgLetter.src = "./img/shy.png"; 
+imgLetter.src = "./img/end.png"; 
 var timeouts = [];
 
 document.querySelector("#mess").addEventListener("change", function () {
   mainContent_form.classList.add("hiden")
   recieve.style.opacity = 0;
-
+  var audio = document.getElementById('audio');
   mainContent_text.innerHTML = "";
  
 
@@ -67,7 +57,7 @@ document.querySelector("#mess").addEventListener("change", function () {
 
     if (this.checked == true) {
 
-
+audio.play()
         document.querySelector(".content").classList.add("actived")
         const splitMainContentLetter = mainContentLetter.split("");
         
@@ -80,12 +70,12 @@ document.querySelector("#mess").addEventListener("change", function () {
                   setTimeout(()=>{
                     mainContent_form.classList.remove("hiden")
                     recieve.style.opacity = 1;
-                },1000)
+                },3000)
                 document.querySelector(".img1").setAttribute("style", "opacity: 1; transition: .5s");
               }
             }
             
-          }, 50 * 1));
+          }, 50 * i));
         }
         
 

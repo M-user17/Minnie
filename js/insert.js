@@ -7,29 +7,24 @@ let favoriteContainer = document.getElementById('favoritefood')
 let selectnamex = document.getElementById('checkSelect')
 let errorForm = document.getElementById('errorForm')
 function checkUsername() {
- 
   let username = document.querySelector('.usernameInput').value
   if (username.trim() === 'A') {
     passwordContainer.classList.remove('hiden')
     usernameContainer.disabled = true
     usernameContainer.classList.add('hiden')
-    setRandomImageBirthday();
-
-
+    setRandomImageBirthday()
   } else {
     showErrorForm()
   }
 }
 function checkBirthday() {
-
   let password = document.getElementById('birthday').value
-  if (password.trim() === 'B') {   
-     setImageTim();
+  if (password.trim() === 'B') {
+    setImageTim()
 
     emailContainer.classList.remove('hiden')
     passwordContainer.disabled = true
     passwordContainer.classList.add('hiden')
-
   } else {
     showErrorForm()
   }
@@ -40,61 +35,54 @@ function checkEmail() {
     favoriteContainer.classList.remove('hiden')
     emailContainer.disabled = true
     emailContainer.classList.add('hiden')
-    setImageEat();
-  
+    setImageEat()
   } else {
-    
     showErrorForm()
   }
 }
 function checkFavorite() {
-  var selectedFavoriteFoods = document.querySelectorAll('input[name="favoritefood"]:checked');
-  
-  if (selectedFavoriteFoods.length > 0) {
-    var selectedFoodValues = Array.from(selectedFavoriteFoods).map(checkbox => checkbox.value);
+  var selectedFavoriteFoods = document.querySelectorAll(
+    'input[name="favoritefood"]:checked'
+  )
 
-    if ( selectedFoodValues.length === 3 && selectedFoodValues.includes('tom') && selectedFoodValues.includes('socola') && selectedFoodValues.includes('kem')) {
-     
+  if (selectedFavoriteFoods.length > 0) {
+    var selectedFoodValues = Array.from(selectedFavoriteFoods).map(
+      (checkbox) => checkbox.value
+    )
+
+    if (
+      selectedFoodValues.length === 3 &&
+      selectedFoodValues.includes('tom') &&
+      selectedFoodValues.includes('socola') &&
+      selectedFoodValues.includes('kem')
+    ) {
       favoriteContainer.classList.add('hiden')
       favoriteContainer.disabled = true
       selectnamex.classList.remove('hiden')
       setImageWhite()
-     
     } else {
-    alert('Sai hoặc thiếu thông tin rùi')
+      alert('Sai hoặc thiếu thông tin rùi')
     }
   } else {
-   alert('Bạn nhỏ quên chưa chọn rồi :((')
+    alert('Bạn nhỏ quên chưa chọn rồi :((')
   }
 }
 
-
-function CheckEx(){
-let namex1 = document.getElementById('namex').value
-if(namex1.trim() === ''){
-
- alert('Bạn nhỏ cứ nói tên nó ra để tui xử nó')
-
-}else{
-  selectnamex.classList.add('hiden')
-  window.location.href = 'button.html'; 
+function CheckEx() {
+  let namex1 = document.getElementById('namex').value
+  if (namex1.trim() === '') {
+    alert('Bạn nhỏ cứ nói tên nó ra để tui xử nó')
+  } else {
+    selectnamex.classList.add('hiden')
+    window.location.href = 'button.html'
+  }
 }
-}
-
-
-
-
-
-
-
-
 
 function showErrorForm() {
   setRandomImageEr()
   errorForm.style.top = '20%'
   errorForm.classList.add('fe')
   setTimeout(function () {
-   
     containerContent.classList.add('hiden')
   }, 1000)
 
@@ -111,69 +99,52 @@ function hideErrorForm() {
   // setRandomImageEr()
 }
 
-
-
-
 // ảnh từng form
-var imageElement = document.getElementById("randomimg");
+var imageElement = document.getElementById('randomimg')
 function setRandomImageHello() {
-  var randomImageSource = "./img/helo.png";
- 
-  imageElement.src = randomImageSource;
+  var randomImageSource = './img/helo.png'
+
+  imageElement.src = randomImageSource
 }
 function setRandomImageBirthday() {
-  var randomImageSourceBirthday = "./img/bd.png";
-  imageElement.src = randomImageSourceBirthday;
+  var randomImageSourceBirthday = './img/bd.png'
+  imageElement.src = randomImageSourceBirthday
 }
 
 function setImageEat() {
-  var randomImageSourceEat = "./img/eat.png";
-  imageElement.src = randomImageSourceEat;
+  var randomImageSourceEat = './img/eat.png'
+  imageElement.src = randomImageSourceEat
 }
 function setImageTim() {
-  var randomImageSourceTim = "./img/tim.png";
-  imageElement.src = randomImageSourceTim;
+  var randomImageSourceTim = './img/tim.png'
+  imageElement.src = randomImageSourceTim
 }
 function setImageWhite() {
-  var randomImageSourceWhite = "./img/white.png";
-  imageElement.src = randomImageSourceWhite;
+  var randomImageSourceWhite = './img/white.png'
+  imageElement.src = randomImageSourceWhite
 }
-setRandomImageHello();
-
-
-
-
-
-
-
-
-
-
-
-
-
+setRandomImageHello()
 
 //random ảnh form lỗi
-var imageSourcesEr =[
-  "./img/Errorcat/1.png",
-  "./img/Errorcat/2.png",
-  "./img/Errorcat/3.png",
-  "./img/Errorcat/4.png",
-  "./img/Errorcat/5.png",
-  "./img/Errorcat/6.png",
-  "./img/Errorcat/7.png",
-  "./img/Errorcat/8.png",
-  "./img/Errorcat/9.png",
+var imageSourcesEr = [
+  './img/Errorcat/1.png',
+  './img/Errorcat/2.png',
+  './img/Errorcat/3.png',
+  './img/Errorcat/4.png',
+  './img/Errorcat/5.png',
+  './img/Errorcat/6.png',
+  './img/Errorcat/7.png',
+  './img/Errorcat/8.png',
+  './img/Errorcat/9.png'
 ]
 
-var imageElementEr = document.getElementById("randomimger")
+var imageElementEr = document.getElementById('randomimger')
 function getRandomIndex(arr) {
-  return Math.floor(Math.random() * arr.length);
+  return Math.floor(Math.random() * arr.length)
 }
 
 function setRandomImageEr() {
-  var randomIndex = getRandomIndex(imageSourcesEr);
-  var randomImageSource = imageSourcesEr[randomIndex];
-  imageElementEr.src = randomImageSource;
+  var randomIndex = getRandomIndex(imageSourcesEr)
+  var randomImageSource = imageSourcesEr[randomIndex]
+  imageElementEr.src = randomImageSource
 }
-

@@ -416,6 +416,12 @@ audio {
   }
 }
 
+.swal-icon--custom img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
 @keyframes moveLight {
   0% {
     opacity: 0;

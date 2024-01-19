@@ -140,6 +140,7 @@ audio.play()
     });
   }
 
+
   document.querySelector(".mainContent_button").addEventListener("click", ()=>{
     let text = document.querySelector(".mainContent_textarea").value;
     if(text != ""){
@@ -150,6 +151,12 @@ audio.play()
         icon: "./img/byebye.png",
       });
       document.querySelector(".mainContent_textarea").value = "";
+    }else{
+      swal({
+        title: "Bạn phải nhập gì đó tui mới nhận được chứ!!!",
+        icon: "./img/tt.png",
+      });
+
     }
   })
 
